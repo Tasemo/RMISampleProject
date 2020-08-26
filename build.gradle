@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '8'
+
+application {
+    if (project.hasProperty("server")) {
+        mainClassName = 'DefaultChatServer'
+    } else {
+        mainClassName = 'DefaultChatClient'
+    }
+}
+
+run {
+    standardInput = System.in
+}
